@@ -145,7 +145,7 @@
     <input type="text" id="searchInput" placeholder="Cari berdasarkan ID SLS...">
     <button onclick="searchFeature()">Cari</button>
     <br>
-   <input type="text" id="koordinatInput" placeholder="Lat,Lng contoh: -0.0263,109.3425">
+   <input type="text" id="koordinatInput" placeholder="Lat,Lng contoh: -0.228519, 109.432654">
    <button onclick="searchByKoordinat()">Cari Koordinat</button>
     <button onclick="resetSearch()">Reset</button>
   </div>
@@ -158,7 +158,7 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([-0.1333, 109.3333], 10);
+    const map = L.map('map').setView([-0.228519,109.432654], 7);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
@@ -337,7 +337,7 @@ const kodePosByDesa = {
         map.removeLayer(markerLatLng);
         markerLatLng = null;
       }
-      map.setView([-0.1333, 109.3333], 10);
+      map.setView([-0.228519,109.432654], 7);;
     }
 
     function onEachFeature(feature, layer) {
@@ -426,7 +426,7 @@ const kodePosByDesa = {
   const lng = parseFloat(lngStr);
 
   if (isNaN(lat) || isNaN(lng)) {
-    alert("Format koordinat yang benar: -0.0263,109.3425");
+    alert("Format koordinat yang benar: -0.228519,109.432654");
     return;
   }
 
