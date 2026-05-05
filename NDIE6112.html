@@ -160,9 +160,16 @@
   <script>
     const map = L.map('map').setView([-0.228519, 109.432654], 10);
 
+     /* OpenStreetMap (OSM) standar
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+    }).addTo(map); */
+
+     // Google Maps Satellite
+const googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+}).addTo(map);
 
     let geojsonLayer;
     let currentHighlighted;
