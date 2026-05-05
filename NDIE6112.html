@@ -342,7 +342,8 @@ const kodePosByDesa = {
 
     function onEachFeature(feature, layer) {
       const props = feature.properties;
-      const kodePos = kodePosByDesa[props.nmdesa] || "Mbuh ya, nyong ra mudeng";
+      const namaDesaBersih = props.nmdesa ? props.nmdesa.trim() : "";
+      const kodePos = kodePosByDesa[namaDesaBersih] || "Kode Pos Tidak Terdaftar";
       if (props && props.nmsls) {
         const popupContent = `
           <div class="info">
